@@ -1,0 +1,21 @@
+<nav #navBar class="navbar Navanmation navbar-expand-lg nav-footer-color fixed-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/customers">
+      <img width="25" src="./assets/images/pngegg.png" alt="logo" />
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link px-2" routerLinkActive="active-link" routerLink="/customers">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2" routerLinkActive="active-link" routerLink="/transactions">Transactions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

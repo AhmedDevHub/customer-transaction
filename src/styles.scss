@@ -1,0 +1,273 @@
+/* Importing Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+/* Variables */
+$main-color: #3B96D7;
+$light-color: #faf9f8;
+$shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+  rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+  rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+$font-family: "Encode Sans Expanded", sans-serif;
+$main-transition: 0.4s;
+
+/* General Styles */
+body {
+  font-family: $font-family;
+  letter-spacing: 0.8px;
+  background-image:linear-gradient(#2c2c2c,  #232a3f,#322f35,);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color $main-transition ease-in-out;
+}
+
+.bg-primary-Color {
+  background-color: #152a63 !important;
+}
+
+/* Selection Styles */
+::selection {
+  background-color: $main-color;
+  color: #fff;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Input Styles */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  padding-right: 2.5rem;
+}
+
+.input-group .form-control {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.input-group-append .input-group-text {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* Scrollbar Track and Thumb Styles */
+::-webkit-scrollbar-track {
+  background-color: $light-color;
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(#04131f, #402857, #154263);
+  border-radius: 100vh;
+}
+
+/* Text Color Styles */
+.text-secondary {
+  color: #e4e4e4 !important;
+}
+
+/* Navbar Styles */
+.navbar {
+  box-shadow: $shadow;
+
+  .nav-link {
+    color: #ffff;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: $main-color;
+  }
+}
+
+/* Footer Navigation Styles */
+.nav-footer-color {
+  background-image: linear-gradient(to right, #04131f, #402857, #154263);
+  color: #fefefe !important;
+
+  &:focus {
+    color: #ffff !important;
+  }
+
+  &:hover {
+    background-color: $light-color;
+  }
+}
+
+/* Copyright Text Styles */
+.copyRight {
+  color: #583bd7;
+}
+
+/* Transactions Styles */
+.transactions {
+  .card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .input-group-text {
+    background-color: $main-color;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+  }
+
+  .icon {
+    font-size: 1.2em;
+  }
+
+  .form-control {
+    border-color: $main-color;
+
+    &:focus {
+      border-color: $main-color;
+      box-shadow: 0 0 0 0.25rem rgba(59, 150, 215, 0.25);
+    }
+  }
+
+  .table {
+    thead {
+      th {
+        background-color: #343a40;
+        color: #fff;
+        border-color: $main-color;
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: $light-color;
+        }
+      }
+    }
+
+    tfoot {
+      td {
+        background-color: #343A40;
+        color: #fff;
+      }
+    }
+  }
+
+  .card-header {
+    background-color: #007bff;
+    border-color: $main-color;
+  }
+
+  .card-body {
+    .card {
+      border-color: $main-color;
+
+      .card-body {
+        canvas {
+          background-color: $light-color;
+          border: 1px solid $main-color;
+        }
+      }
+    }
+  }
+}
+
+/* Margin Top Styles */
+.marginTop {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.thead-dark{
+  background-color: #343A40 !important;
+  color: #fff !important;
+}
+
+/* Card Styles */
+.card {
+  position: relative;
+  min-height: 460px;
+  cursor: pointer;
+  transition: border-color $main-transition linear,
+    transform $main-transition ease-in-out, box-shadow $main-transition linear;
+    border: 0 !important;
+    box-shadow: $shadow;
+
+  .card-btn {
+    position: relative;
+    top: 90px;
+    transition: top $main-transition ease-in-out,
+      background-color $main-transition ease-in-out;
+  }
+
+  &:hover {
+    border-color: $main-color;
+    box-shadow: 2px 2px 18px -8px rgba(57, 82, 129, 0.29);
+
+    .card-btn {
+      top: 0px;
+    }
+  }
+}
+
+/* Main Button Styles */
+.main-btn {
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background-image: linear-gradient(to right, #04131f, #402857, #154263);
+  padding: 4px 8px;
+  transition: background-color $main-transition ease-in-out;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $main-color;
+  }
+
+  &:disabled {
+    background-color: #064c7a63;
+    color: #ffffff8e;
+    cursor: not-allowed;
+  }
+}
+
+/* Go Up Button Styles */
+.goUpBtn {
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: $main-color;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  transition: background-color $main-transition ease-in-out;
+
+  &:hover {
+    background-color: darken($main-color, 10%);
+  }
+
+  i {
+    font-size: 1.25rem;
+  }
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

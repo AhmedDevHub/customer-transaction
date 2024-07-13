@@ -1,0 +1,71 @@
+<div class="container mt-5 transactions">
+  <div class="card shadow">
+    <div class="card-header bg-primary-Color text-white">
+      <h2>Transactions <span class="icon">↔️</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 mt-3 me-3">
+          <p-dropdown
+            [options]="getUniqueCustomers()"
+            [(ngModel)]="selectedCustomer"
+            (onChange)="filterTransactions()"
+            optionLabel="label"
+            optionValue="value"
+            placeholder="Select a Customer"
+            aria-label="Customer Dropdown"
+          ></p-dropdown>
+        </div>
+        <div class="col-md-4 mt-3 me-3">
+          <p-inputNumber
+          [(ngModel)]="amountFilter"
+          mode="decimal"
+          placeholder="Search by amount"
+          (onInput)="filterTransactionsByAmount()"
+          aria-label="Amount Input"
+          ></p-inputNumber>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark table-striped">
+            <tr>
+              <th>Transaction ID</th>
+              <th>Customer Name</th>
+              <th>Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transaction of filteredTransactions">
+              <td>{{ transaction.id }}</td>
+              <td>{{ getCustomerName(transaction.customer_id.toString()) }}</td>
+              <td>{{ transaction.date }}</td>
+              <td>{{ transaction.amount }}</td>
+            </tr>
+          </tbody>
+          <tfoot class="bg-dark">
+            <tr>
+              <td colspan="3"><strong>Total:</strong></td>
+              <td><strong>{{ getTotalAmount() }}</strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Chart Section -->
+      <div>
+        <p-chart
+          type="bar"
+          [data]="barChartData"
+          [options]="barChartOptions"
+          height="300"
+          width="700"   
+        ></p-chart>
+      </div>
+    </div>
+  </div>
+</div>

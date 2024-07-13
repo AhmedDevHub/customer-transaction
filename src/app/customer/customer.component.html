@@ -1,0 +1,41 @@
+<div class="container mt-4 w-75">
+    <div class="card shadow">
+      
+      <div class="card-header bg-primary text-white">
+        <h2>Customers <span><i class="fa-solid fa-users"></i></span></h2>
+      </div>
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by name"
+            [(ngModel)]="customerNameFilter"
+            (keyup)="filterCustomersByName()"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text bg-primary border-primary text-white">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </span>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table ">
+            <thead class="thead-dark">
+              <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let customer of filteredCustomers">
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
